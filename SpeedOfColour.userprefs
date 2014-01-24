@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Main.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Lane.cs">
     <Files>
-      <File FileName="G:\Skole\Animasjon og Interaktivitet 3\Space Doodlings\Unity\Assets\Scripts\CameraControls.cs" Line="36" Column="2" />
-      <File FileName="Assets\Script\Lane.cs" Line="22" Column="3" />
-      <File FileName="Assets\Script\Object.cs" Line="19" Column="27" />
-      <File FileName="Assets\Script\Main.cs" Line="19" Column="3" />
+      <File FileName="Assets\Script\Lane.cs" Line="24" Column="1" />
+      <File FileName="Assets\Script\Lane.cs" Line="11" Column="3" />
+      <File FileName="Assets\Script\Object.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Main.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
