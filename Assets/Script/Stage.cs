@@ -3,8 +3,12 @@ using System.Collections;
 
 public class Stage : MonoBehaviour {
 	
+	public Rigidbody lane;
+	public Rigidbody blocker;
+	
 	// Use this for initialization
 	void Start () {
+		SpawnLanes();
 		StartCoroutine("SpawnBlocker");
 	}
 	
@@ -14,20 +18,19 @@ public class Stage : MonoBehaviour {
 	}
 	
 	void SpawnLanes(){
-		for(int i = 0; i < 5; i++){
-			Lane lane = new Lane();
+		for(int i = 1; i <= 5; i++){
+			Instantiate(lane, lane.transform.position, lane.transform.rotation);
 			
-			lane.y = Screen.height/5 * i;
-			lane.x = Screen.width/2;
+			lane.transform.position = new Vector3(0,0,Screen.height/5* i/10-20);
 		}
 	}
 	
 	IEnumerator SpawnBlocker(){
-		yield return new WaitForSeconds(10);
+		yield return new WaitForSeconds(1);
 		
-		Blocker blocker = new Blocker();
+		Instantiate(blocker, blocker.transform.position, blocker.transform.rotation);
 		
-		blocker.y = Screen.width/2;
-		blocker.x = Screen.height/2;
+		blocker.position = new Vector3(Screen.height/2,Screen.width/2,0);
+		StartCoroutine("SpawnBlocker");
 	}
 }

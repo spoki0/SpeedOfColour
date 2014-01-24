@@ -4,6 +4,7 @@ using System.Collections;
 public class Main : MonoBehaviour {
 	
 	public static float ultimateSpeed = -1 * Time.deltaTime;
+	public GameObject stage;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,6 @@ public class Main : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		Stage stage = new Stage();
+		Instantiate(stage, stage.transform.position, stage.transform.rotation);
 	}
 }

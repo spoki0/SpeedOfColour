@@ -21,7 +21,7 @@ public class Lane : MonoBehaviour {
 		
 		if(randomSpawn == 0){
 			randomSpawn = Random.Range(0,1);
-			arrayObjects[randomSpawn].gameObject = new GameObject();
+			Instantiate(arrayObjects[randomSpawn],arrayObjects[randomSpawn].position,arrayObjects[randomSpawn].rotation);
 		}
 	}
 }

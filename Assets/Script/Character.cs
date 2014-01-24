@@ -10,9 +10,9 @@ public class Character : MonoBehaviour {
 		
 
 	// Use this for initialization
-	void Start (int _id) {
-		userID = _id;
-		lane = _id;
+	void Start () {
+		//userID = _id;
+		//lane = _id;
 		//speed = Main.ultimateSpeed;
 	}
 	
