@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Object : MonoBehaviour {
 	
-	int speed = 10;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,6 +15,7 @@ public class Object : MonoBehaviour {
 	}
 	
 	void MoveSelf(){
-		this.rigidbody.AddForce();	
+		Vector3 speed = new Vector3(Main.ultimateSpeed,0,0);
+		this.rigidbody.AddForce(speed);	
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Main : MonoBehaviour {
 	
-	public static float ultimateSpeed = 1 * Time.deltaTime;
+	public static float ultimateSpeed = -1 * Time.deltaTime;
 	
 	// Use this for initialization
 	void Start () {
