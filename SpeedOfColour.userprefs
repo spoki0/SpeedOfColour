@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Character.cs">
+    <Files>
+      <File FileName="Assets\Script\Character.cs" Line="15" Column="14" />
+      <File FileName="..\AsteroidTowerDefence\Assets\Custom Assets\Scripts\Asteroid\AsteroidSpawn.cs" Line="7" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
