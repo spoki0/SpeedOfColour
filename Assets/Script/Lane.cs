@@ -31,33 +31,34 @@ public class Lane : MonoBehaviour {
 		
 		currentBlocker.SendMessage("GetCurrentLane", gameObject);
 		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
-		
+
+		Color gateColour = new Color(0,0,0);
+
 		if(isChosen){
-			int randomNr = Random.Range(0, Main.listColours.Count);
-			Color randomColour = Main.listColours[randomNr];
-			randomNr = Random.Range(0, Main.listColours.Count);
-			Color randomColour2 = Main.listColours[randomNr];
-			
-			gateColour = currentBlocker.renderer.material.color;
-			gateColour.r = (randomColour.r + randomColour2.r)/2;
-			gateColour.b = (randomColour.b + randomColour2.b)/2;
-			gateColour.g = (randomColour.g + randomColour2.g)/2;
-			currentBlocker.renderer.material.color = gateColour;
+			Color col1 = Main.listColours[Random.Range(0, Main.listColours.Count)];
+			Color col2 = Main.listColours[Random.Range(0, Main.listColours.Count)];
+
+			gateColour.r = (col1.r + col2.r)/2;
+			gateColour.g = (col1.g + col2.g)/2;
+			gateColour.b = (col1.b + col2.b)/2;
+
+			print (gateColour.r + gateColour.g + gateColour.b);
 		}
 		else{
-			gateColour = currentBlocker.renderer.material.color;
 			gateColour.r = 0.5f;
-			gateColour.b = 0.5f;
 			gateColour.g = 0.5f;
-			currentBlocker.renderer.material.color = gateColour;	
+			gateColour.b = 0.5f;
 		}
+
+		currentBlocker.renderer.material.color = gateColour;	
+
 	}
 	
 	void LaneColour(Color characterColour){
 		laneColour = transform.renderer.material.color;
-		laneColour.r -= (laneColour.r - characterColour.r)/5;
-		laneColour.b -= (laneColour.b - characterColour.b)/5;
-		laneColour.g -= (laneColour.g - characterColour.g)/5;
+		laneColour.r -= (laneColour.r - characterColour.r)/15;
+		laneColour.b -= (laneColour.b - characterColour.b)/15;
+		laneColour.g -= (laneColour.g - characterColour.g)/15;
 		
 		transform.renderer.material.color = laneColour;
 	}

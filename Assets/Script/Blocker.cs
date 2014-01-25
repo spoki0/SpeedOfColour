@@ -17,19 +17,21 @@ public class Blocker : Object {
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Player"){
 
+			print(col.transform.renderer.material.color);
+
 			bool valid = true;
-			if (col.transform.renderer.material.color.r == 1){
-				if (transform.renderer.material.color.r != 1){
+			if (col.transform.renderer.material.color.r != 0.0f){
+				if (transform.renderer.material.color.r == 0.0f){
 					valid = false;
 				}
 			}
-			if (col.transform.renderer.material.color.g == 1){
-				if (transform.renderer.material.color.g != 1){
+			if (col.transform.renderer.material.color.g != 0.0f){
+				if (transform.renderer.material.color.g == 0.0f){
 					valid = false;
 				}
 			}
-			if (col.transform.renderer.material.color.b == 1){
-				if (transform.renderer.material.color.b != 1){
+			if (col.transform.renderer.material.color.b != 0.0f){
+				if (transform.renderer.material.color.b == 0.0f){
 					valid = false;
 				}
 			}
@@ -37,12 +39,6 @@ public class Blocker : Object {
 			if (valid){
 				Destroy(gameObject);
 			}
-			/*
-			if(currentLane.renderer.material.color == transform.renderer.material.color){
-				Destroy(gameObject);	
-			}
-			*/
-
 		}
 	}
 	
