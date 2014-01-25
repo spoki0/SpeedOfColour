@@ -18,18 +18,18 @@ public class Blocker : Object {
 		if(col.gameObject.tag == "Player"){
 
 			bool valid = true;
-			if (col.transform.renderer.material.color.r != 0.0f){
-				if (transform.renderer.material.color.r == 0.0f){
+			if (col.transform.renderer.material.color.r != 0){
+				if (transform.renderer.material.color.r == 0){
 					valid = false;
 				}
 			}
-			if (col.transform.renderer.material.color.g != 0.0f){
-				if (transform.renderer.material.color.g == 0.0f){
+			if (col.transform.renderer.material.color.g != 0){
+				if (transform.renderer.material.color.g == 0){
 					valid = false;
 				}
 			}
-			if (col.transform.renderer.material.color.b != 0.0f){
-				if (transform.renderer.material.color.b == 0.0f){
+			if (col.transform.renderer.material.color.b != 0){
+				if (transform.renderer.material.color.b == 0){
 					valid = false;
 				}
 			}
