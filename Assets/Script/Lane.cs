@@ -70,7 +70,7 @@ public class Lane : MonoBehaviour {
 			laneColour.b -= (laneColour.b - 1f)/15;
 			laneColour.g -= (laneColour.g - 1f)/15;
 		}
-		
+		laneColour.a = 0.01f;
 		transform.renderer.material.color = laneColour;
 	}
 	
