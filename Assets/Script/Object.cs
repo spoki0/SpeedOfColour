@@ -10,6 +10,10 @@ public class Object : MonoBehaviour {
 	// Update is called once per frame
 	protected virtual void Update () {
 		MoveSelf();
+
+		if (transform.position.x < -40){
+			Destroy(gameObject);
+		}
 	}	
 	
 	public void MoveSelf(){
