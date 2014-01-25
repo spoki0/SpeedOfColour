@@ -14,11 +14,7 @@ public class Main : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		/*
-		menuAreaNormalized = new Rect(menuArea.x * Screen.width - (menuArea.width * 0.5f),
-			menuArea.y * Screen.height - (menuArea.height * 0.5f), 
-			menuArea.width, menuArea.height);*/
-
+		QualitySettings.antiAliasing = 4;
 		List<KeyCode> Player1 = new List<KeyCode>();
 		Player1.Add(KeyCode.UpArrow);
 		Player1.Add(KeyCode.DownArrow);

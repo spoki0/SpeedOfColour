@@ -11,4 +11,8 @@ public class SpeedPower : Object {
 	//void Update () {
 	//	base.Update();
 	//}
+	
+	void OnCollisionEnter(Collision col){
+		
+	}
 }
