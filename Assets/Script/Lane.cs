@@ -11,6 +11,7 @@ public class Lane : MonoBehaviour {
 	public bool hasPlayerOn;
 	Color defaultColour;
 	int randomSpawn;
+	public int nrPlayersOn;
 
 	// Use this for initialization
 	void Start () {
@@ -58,10 +59,16 @@ public class Lane : MonoBehaviour {
 	}
 	
 	void LaneColour(Color characterColour){
-		laneColour = transform.renderer.material.color;
-		laneColour.r -= (laneColour.r - characterColour.r)/15;
-		laneColour.b -= (laneColour.b - characterColour.b)/15;
-		laneColour.g -= (laneColour.g - characterColour.g)/15;
+		if(nrPlayersOn <3){
+			laneColour = transform.renderer.material.color;
+			laneColour.r -= (laneColour.r - characterColour.r)/15;
+			laneColour.b -= (laneColour.b - characterColour.b)/15;
+			laneColour.g -= (laneColour.g - characterColour.g)/15;
+		}else{
+			laneColour.r -= (laneColour.r - 1f)/15;
+			laneColour.b -= (laneColour.b - 1f)/15;
+			laneColour.g -= (laneColour.g - 1f)/15;
+		}
 		
 		transform.renderer.material.color = laneColour;
 	}

@@ -22,7 +22,7 @@ public class Main : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		nrPlayers = 2;
+		nrPlayers = 3;
 		
 		for(int i = 1; i <= nrPlayers; i++){
 

@@ -34,6 +34,12 @@ public class Character : MonoBehaviour {
 	void OnTriggerExit(Collider col){
 		if(col.gameObject.name == "Lane(Clone)"){
 			col.GetComponent<Lane>().hasPlayerOn = false;
+			col.GetComponent<Lane>().nrPlayersOn --;
+		}
+	}
+	void OnTriggerEnter(Collider col){
+		if(col.gameObject.name == "Lane(Clone)"){
+			col.GetComponent<Lane>().nrPlayersOn ++;	
 		}
 	}
 
