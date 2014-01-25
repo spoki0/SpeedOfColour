@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class Stage : MonoBehaviour {
 	
 	public Rigidbody lane = new Rigidbody();
-	public Rigidbody blocker;
 	List<GameObject> listLanes = new List<GameObject>();
 	
 	// Use this for initialization
@@ -21,25 +20,24 @@ public class Stage : MonoBehaviour {
 	
 	void SpawnLanes(){
 		for(int i = 1; i <= 5; i++){
-			Instantiate(lane, lane.transform.position, lane.transform.rotation);
+			GameObject currentLane = (GameObject)Instantiate(lane.gameObject, lane.transform.position, lane.transform.rotation);
 			
-			lane.transform.position = new Vector3(0,0,Screen.height/5* i/10-23);
-			listLanes.Add(lane.gameObject);
+			currentLane.transform.position = new Vector3(0,0,Screen.height/5* i/10-23);
+			listLanes.Add(currentLane);
 		}
 	}
 	
 	IEnumerator SpawnBlocker(){
-		yield return new WaitForSeconds(1);
-		ColourLane();
+		yield return new WaitForSeconds(10);
 		
-		Instantiate(blocker, blocker.transform.position, blocker.transform.rotation);
+		int chosenGate = Random.Range(0,listLanes.Count);
 		
-		blocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
+		for(int i = 0; i <= listLanes.Count-1; i++){
+			if(i == chosenGate)
+				listLanes[i].SendMessage("AddGate", true);
+			listLanes[i].SendMessage("AddGate", false);
+		}
+		
 		StartCoroutine("SpawnBlocker");
-	}
-	
-	void ColourLane(){
-		int randomNr = Random.Range(0, listLanes.Count);
-		listLanes[randomNr].SendMessage("AddColour");
 	}
 }
