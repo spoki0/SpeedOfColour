@@ -38,15 +38,19 @@ public class Lane : MonoBehaviour {
 			Color col1 = Main.listColours[Random.Range(0, Main.listColours.Count)];
 			Color col2 = Main.listColours[Random.Range(0, Main.listColours.Count)];
 			
+			gateColour.r = 0;
+			gateColour.g = 0;
+			gateColour.b = 0;
+			
 			gateColour.r = (col1.r + col2.r)/2;
 			gateColour.g = (col1.g + col2.g)/2;
 			gateColour.b = (col1.b + col2.b)/2;
 		}
 		else{
 			gateColour = currentBlocker.renderer.material.color;
-			gateColour.r = 0.5f;
-			gateColour.g = 0.5f;
-			gateColour.b = 0.5f;
+			gateColour.r = 0;
+			gateColour.g = 0;
+			gateColour.b = 0;
 		}
 
 		currentBlocker.renderer.material.color = gateColour;	
