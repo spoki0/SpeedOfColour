@@ -70,7 +70,7 @@ public class Character : MonoBehaviour {
 		}
 
 		//actual movements, fit plane
-		transform.position = new Vector3(xpos, 3, Screen.height/50*lane-23;
+		transform.position = new Vector3(xpos, 3, Screen.height/50*lane-23);
 
 	}
 	IEnumerator WaitDestroy(){
