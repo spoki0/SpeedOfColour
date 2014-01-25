@@ -7,7 +7,7 @@ public class Stage : MonoBehaviour {
 	public Rigidbody lane = new Rigidbody();
 	public Rigidbody player = new Rigidbody();
 
-	List<GameObject> listLanes = new List<GameObject>();
+	public static List<GameObject> listLanes = new List<GameObject>();
 	public static List<GameObject> listBlockers = new List<GameObject>();
 	public static List<GameObject> listPlayers = new List<GameObject>();
 	
@@ -27,7 +27,7 @@ public class Stage : MonoBehaviour {
 		for(int i = 1; i <= 5; i++){
 			GameObject currentLane = (GameObject)Instantiate(lane.gameObject, lane.transform.position, lane.transform.rotation);
 			
-			currentLane.transform.position = new Vector3(0,0,Screen.height/5*i/10-23);
+			currentLane.transform.position = new Vector3(0,0,Screen.height/50*i-25);
 			listLanes.Add(currentLane);
 		}
 	}
@@ -48,13 +48,21 @@ public class Stage : MonoBehaviour {
 		yield return new WaitForSeconds(2);
 		
 		int chosenGate = Random.Range(0,listLanes.Count);
-		
-		for(int i = 0; i <= listLanes.Count-1; i++){
-			if(i == chosenGate){
-				listLanes[i].SendMessage("AddGate", true);
-			} else {
-				listLanes[i].SendMessage("AddGate", false);
+
+		int temp = Random.Range(0, 2);
+		if( temp == 0){
+
+			for(int i = 0; i <= listLanes.Count-1; i++){
+				if(i == chosenGate){
+					listLanes[i].SendMessage("AddGate", true);
+				} else {
+					listLanes[i].SendMessage("AddGate", false);
+				}
 			}
+		}
+
+		else{
+			listLanes[chosenGate].SendMessage("AddGate", false);
 		}
 		
 		StartCoroutine("SpawnBlocker");
