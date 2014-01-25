@@ -15,7 +15,7 @@ public class Character : MonoBehaviour {
 	}
 
 	void setID(int _id){
-		//userID = _id;
+		userID = _id;
 		lane = _id;
 		//speed = Main.ultimateSpeed;
 		transform.position = new Vector3(0, 7, Screen.height/5* lane/10-23);
