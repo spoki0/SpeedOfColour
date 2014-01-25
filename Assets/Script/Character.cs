@@ -19,6 +19,8 @@ public class Character : MonoBehaviour {
 		lane = _id;
 		speed = Main.ultimateSpeed;
 		transform.position = new Vector3(0, 0, Screen.height/5* lane/10-23);
+
+		colour = Main.listColours[ _id-1 ];
 	}
 
 	// Update is called once per frame
