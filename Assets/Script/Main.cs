@@ -54,7 +54,7 @@ public class Main : MonoBehaviour {
 	
 	void StartGame(){
 
-		nrPlayers = 4;
+		nrPlayers = 2;
 		
 		for(int i = 1; i <= nrPlayers; i++){
 
