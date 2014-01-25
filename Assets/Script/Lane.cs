@@ -48,9 +48,9 @@ public class Lane : MonoBehaviour {
 		}
 		else{
 			gateColour = currentBlocker.renderer.material.color;
-			gateColour.r = 0;
-			gateColour.g = 0;
-			gateColour.b = 0;
+			gateColour.r = 0.5f;
+			gateColour.g = 0.5f;
+			gateColour.b = 0.5f;
 		}
 
 		currentBlocker.renderer.material.color = gateColour;	
@@ -59,9 +59,9 @@ public class Lane : MonoBehaviour {
 	
 	void LaneColour(Color characterColour){
 		laneColour = transform.renderer.material.color;
-		laneColour.r -= (laneColour.r - characterColour.r)/25;
-		laneColour.b -= (laneColour.b - characterColour.b)/25;
-		laneColour.g -= (laneColour.g - characterColour.g)/25;
+		laneColour.r -= (laneColour.r - characterColour.r)/15;
+		laneColour.b -= (laneColour.b - characterColour.b)/15;
+		laneColour.g -= (laneColour.g - characterColour.g)/15;
 		
 		transform.renderer.material.color = laneColour;
 	}
