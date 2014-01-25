@@ -49,11 +49,12 @@ public class Main : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		GameOver();
 	}
 	
 	void StartGame(){
-		nrPlayers = 4;
+
+		nrPlayers = 2;
 		
 		for(int i = 1; i <= nrPlayers; i++){
 
@@ -69,5 +70,10 @@ public class Main : MonoBehaviour {
 		
 		
 		Instantiate(stage, new Vector3(0,0,0), stage.transform.rotation);
+	}
+	
+	void GameOver(){
+		if(listColours.Count <= 0)
+			Application.LoadLevel(0);
 	}
 }

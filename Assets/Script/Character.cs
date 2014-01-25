@@ -8,7 +8,7 @@ public class Character : MonoBehaviour {
 	int xpos;
 	float speed;
 	Color colour;
-		
+	GameObject currentLane;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +27,7 @@ public class Character : MonoBehaviour {
 	}
 	
 	void OnTriggerStay(Collider col){
+		currentLane = col.gameObject;
 		if(col.gameObject.name == "Lane(Clone)"){
 			col.GetComponent<Lane>().hasPlayerOn = true;
 			col.gameObject.SendMessage("LaneColour", colour);
@@ -72,9 +73,19 @@ public class Character : MonoBehaviour {
 		transform.position = new Vector3(xpos, 6, Screen.height/5* lane/10-23);
 
 	}
+	IEnumerator WaitDestroy(){
+		yield return new WaitForSeconds(2);
+		Destroy(gameObject);	
+	}
 	
 	void OnDisable(){
+		if(currentLane)
+			currentLane.GetComponent<Lane>().hasPlayerOn = false;
 		Main.listColours.Remove(colour);
 		Stage.listPlayers.Remove(gameObject);
+		
+		for(int i = 0; i<Stage.listBlockers.Count; i++){
+			Destroy(Stage.listBlockers[i]);
+		}
 	}
 }

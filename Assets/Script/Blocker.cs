@@ -55,8 +55,12 @@ public class Blocker : Object {
 				valid = false;
 			}
 	
-			if (valid){
+			if(valid){
 				Destroy(gameObject);
+			}
+			if(!valid){
+				Destroy(col.gameObject);
+				//col.gameObject.SendMessage(StartCoroutine("WaitDestroy"));
 			}
 			
 		}
@@ -64,5 +68,9 @@ public class Blocker : Object {
 	
 	void GetCurrentLane(GameObject lane){
 		currentLane = lane;
+	}
+	
+	void OnDisable(){
+		Stage.listBlockers.Remove(gameObject);	
 	}
 }
