@@ -8,7 +8,7 @@ public class Stage : MonoBehaviour {
 	public Rigidbody player = new Rigidbody();
 
 	List<GameObject> listLanes = new List<GameObject>();
-	List<GameObject> listPlayers = new List<GameObject>();
+	public static List<GameObject> listPlayers = new List<GameObject>();
 	
 	// Use this for initialization
 	void Start () {

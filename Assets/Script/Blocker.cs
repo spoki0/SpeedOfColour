@@ -16,7 +16,6 @@ public class Blocker : Object {
 	
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Player"){
-
 			bool valid = true;
 			if (col.transform.renderer.material.color.r == 1){
 				if (transform.renderer.material.color.r != 1){
@@ -37,6 +36,9 @@ public class Blocker : Object {
 			if (valid){
 				Destroy(gameObject);
 			}
+			/*if(!valid){
+				Destroy(col.gameObject);	
+			}*/
 			/*
 			if(currentLane.renderer.material.color == transform.renderer.material.color){
 				Destroy(gameObject);	

@@ -32,7 +32,7 @@ public class Lane : MonoBehaviour {
 		currentBlocker.SendMessage("GetCurrentLane", gameObject);
 		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
 		
-		if(isChosen){
+		if(isChosen && Stage.listPlayers.Count > 0){
 			int randomNr = Random.Range(0, Main.listColours.Count);
 			Color randomColour = Main.listColours[randomNr];
 			randomNr = Random.Range(0, Main.listColours.Count);
@@ -42,9 +42,12 @@ public class Lane : MonoBehaviour {
 			gateColour.r = (randomColour.r + randomColour2.r)/2;
 			gateColour.b = (randomColour.b + randomColour2.b)/2;
 			gateColour.g = (randomColour.g + randomColour2.g)/2;
+			
 			currentBlocker.renderer.material.color = gateColour;
+			print ("Red: "+gateColour.r + " Green:\n" + gateColour.g + " Blue:\n" + gateColour.b);
 		}
-		else{
+		if(!isChosen){
+			print ("nonGate");
 			gateColour = currentBlocker.renderer.material.color;
 			gateColour.r = 0.5f;
 			gateColour.b = 0.5f;

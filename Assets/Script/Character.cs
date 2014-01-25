@@ -60,5 +60,6 @@ public class Character : MonoBehaviour {
 	
 	void OnDisable(){
 		Main.listColours.Remove(colour);
+		Stage.listPlayers.Remove(gameObject);
 	}
 }
