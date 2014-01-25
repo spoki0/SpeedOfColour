@@ -62,15 +62,15 @@ public class Character : MonoBehaviour {
 		}
 		//move left
 		if(Input.GetKeyDown(Main.keys[userID-1][2]) ){
-			xpos -= 5;
+			xpos -= 5; if(xpos < -60){ Destroy(gameObject);}
 		}
 		//move right
 		if(Input.GetKeyDown(Main.keys[userID-1][3]) ){
-			xpos += 5;
+			xpos += 5; if(xpos > 60){xpos = 50; }
 		}
 
 		//actual movements, fit plane
-		transform.position = new Vector3(xpos, 3, Screen.height/50*lane-23);
+		transform.position = new Vector3(xpos, 3, Stage.listLanes[lane-1].transform.position.z);
 
 	}
 	IEnumerator WaitDestroy(){
