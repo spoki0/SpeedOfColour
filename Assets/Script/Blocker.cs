@@ -20,17 +20,17 @@ public class Blocker : Object {
 			if(transform.renderer.material.color != new Color(0.5f, 0.5f, 0.5f)){
 
 				bool valid = true;
-				if (col.transform.renderer.material.color.r != 0){
+				if (col.transform.renderer.material.color.r >= 0.4f){
 					if (transform.renderer.material.color.r == 0){
 						valid = false;
 					}
 				}
-				if (col.transform.renderer.material.color.g != 0){
+				if (col.transform.renderer.material.color.g >= 0.4f){
 					if (transform.renderer.material.color.g == 0){
 						valid = false;
 					}
 				}
-				if (col.transform.renderer.material.color.b != 0){
+				if (col.transform.renderer.material.color.b >= 0.4f){
 					if (transform.renderer.material.color.b == 0){
 						valid = false;
 					}
