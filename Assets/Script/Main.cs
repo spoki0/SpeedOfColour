@@ -22,21 +22,18 @@ public class Main : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		nrPlayers = 2;
+		nrPlayers = 1;
 		
-		for(int i = 0; i<nrPlayers; i++){
-			randomColour.g = 0;
-			randomColour.r = 0;
-			randomColour.b = 0;
-			randomCInt = Random.Range(0, 3);
-			if(randomCInt == 0)
-				randomColour.r = 1;
-			if(randomCInt == 1)
-				randomColour.g = 1;
-			if(randomCInt == 2)
-				randomColour.b = 1;
-			
+		for(int i = 1; i <= nrPlayers; i++){
+
+			randomColour = new Color(0,0,0);
+
+			randomColour.r = i%2;
+			randomColour.g = i/2%2;
+			randomColour.b = i/4%2;
+
 			listColours.Add(randomColour);
+
 		}
 		
 		

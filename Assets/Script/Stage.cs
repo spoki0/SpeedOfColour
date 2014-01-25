@@ -33,10 +33,11 @@ public class Stage : MonoBehaviour {
 
 	void SpawnPlayers(int _num){
 		for (int i = 1; i <= _num; i++){
-			GameObject currentPlayer = (GameObject)Instantiate(player.gameObject, new Vector3(listLanes[ i-1 ].transform.position.x, 50,listLanes[ i-1 ].transform.position.z), player.transform.rotation);
+			GameObject currentPlayer = (GameObject)Instantiate(player.gameObject, player.transform.position, player.transform.rotation);
 			listPlayers.Add(currentPlayer);
 
 			currentPlayer.SendMessage("setID", i);
+			currentPlayer.transform.position = listLanes[ i-1 ].transform.position;
 		}
 	}
 

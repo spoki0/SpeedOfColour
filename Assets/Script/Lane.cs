@@ -48,9 +48,9 @@ public class Lane : MonoBehaviour {
 	
 	void LaneColour(Color characterColour){
 		laneColour = transform.renderer.material.color;
-		laneColour.r -= (laneColour.r - characterColour.r);
-		laneColour.b -= (laneColour.b - characterColour.b);
-		laneColour.g -= (laneColour.g - characterColour.g);
+		laneColour.r -= (laneColour.r - characterColour.r)/20;
+		laneColour.b -= (laneColour.b - characterColour.b)/20;
+		laneColour.g -= (laneColour.g - characterColour.g)/20;
 		
 		transform.renderer.material.color = laneColour;
 	}

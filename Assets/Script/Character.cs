@@ -25,21 +25,12 @@ public class Character : MonoBehaviour {
 		ChangeColour();
 	}
 	
-	void OnTriggerEnter(Collider col){
+	void OnTriggerStay(Collider col){
 		if(col.gameObject.name == "Lane(Clone)"){
 			col.gameObject.SendMessage("LaneColour", colour);
 		}
 	}
-	void OnTriggerExit(Collider col){
-		if(col.gameObject.name == "Lane(Clone)"){
-			Color tempColour = transform.renderer.material.color;
-			tempColour.r = 1;
-			tempColour.g = 1;
-			tempColour.b = 1;
-			col.gameObject.SendMessage("LaneColour", tempColour);
-		}
-	}
-	
+
 	void ChangeColour(){
 		transform.renderer.material.color = colour;	
 	}
