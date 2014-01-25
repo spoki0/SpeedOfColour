@@ -26,10 +26,14 @@ public class Lane : MonoBehaviour {
 		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
 		
 		if(isChosen){
+			float randomBlue = Random.Range(0.0f, 1.0f);
+			float randomGreen = Random.Range(0.0f, 1.0f);
+			float randomRed = Random.Range(0.0f, 1.0f);
+			
 			gateColour = currentBlocker.renderer.material.color;
-			gateColour.r = 1;
-			gateColour.b = 0;
-			gateColour.g = 0;
+			gateColour.r = randomRed;
+			gateColour.b = randomBlue;
+			gateColour.g = randomGreen;
 			currentBlocker.renderer.material.color = gateColour;
 		}
 		else{
