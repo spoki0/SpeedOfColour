@@ -54,10 +54,8 @@ public class Character : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(countDown == 0)
-			boost = 0;
-		if(countDown > 0)
-			countDown --;
+		if(countDown == 0){	boost = 0; }
+		if(countDown > 0){ countDown --; }
 		
 		//move up
 		if(Input.GetKeyDown(Main.keys[userID-1][0]) ){
