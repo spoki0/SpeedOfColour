@@ -23,6 +23,7 @@ public class Lane : MonoBehaviour {
 		needsColour = isChosen;
 		GameObject currentBlocker = (GameObject)Instantiate(blocker, blocker.transform.position, blocker.transform.rotation);
 		
+		currentBlocker.SendMessage("GetCurrentLane", gameObject);
 		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
 		
 		if(isChosen){
