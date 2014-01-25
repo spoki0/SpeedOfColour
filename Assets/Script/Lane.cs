@@ -37,7 +37,7 @@ public class Lane : MonoBehaviour {
 		if(isChosen){
 			Color col1 = Main.listColours[Random.Range(0, Main.listColours.Count)];
 			Color col2 = Main.listColours[Random.Range(0, Main.listColours.Count)];
-
+			
 			gateColour.r = (col1.r + col2.r)/2;
 			gateColour.g = (col1.g + col2.g)/2;
 			gateColour.b = (col1.b + col2.b)/2;
