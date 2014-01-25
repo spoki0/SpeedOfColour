@@ -45,6 +45,7 @@ public class Lane : MonoBehaviour {
 			print (gateColour.r + gateColour.g + gateColour.b);
 		}
 		else{
+			gateColour = currentBlocker.renderer.material.color;
 			gateColour.r = 0.5f;
 			gateColour.g = 0.5f;
 			gateColour.b = 0.5f;
