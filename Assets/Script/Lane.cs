@@ -81,11 +81,7 @@ public class Lane : MonoBehaviour {
 		
 		if(randomSpawn == 0){
 			randomSpawn = Random.Range(0,arrayObjects.Length);
-<<<<<<< HEAD
-			Instantiate(arrayObjects[randomSpawn],new Vector3(transform.position.x+50, transform.position.y, transform.position.z),arrayObjects[randomSpawn].rotation);
-=======
 			Instantiate(arrayObjects[randomSpawn],new Vector3(transform.position.x+50, transform.position.y+3, transform.position.z),arrayObjects[randomSpawn].rotation);
->>>>>>> 30dcc39d7432223b2acd7da96a9a71f0cafa5609
 		}
 		StartCoroutine("SpawnObject");
 	}
