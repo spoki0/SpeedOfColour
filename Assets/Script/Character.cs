@@ -5,9 +5,9 @@ public class Character : MonoBehaviour {
 
 	int userID;
 	int lane;
-	int xpos;
-	int speed;
-	public int boost;
+	float xpos;
+	float speed;
+	public float boost;
 	public int countDown;
 	Color colour;
 	GameObject currentLane;
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour {
 		userID = _id;
 		lane = _id;
 		xpos = 0;
-		speed = 5;
+		speed = 1;
 		transform.position = new Vector3(0, 7, Screen.height/5* lane/10-23);
 
 		colour = Main.listColours[ _id-1 ];
@@ -70,15 +70,15 @@ public class Character : MonoBehaviour {
 		}
 
 		//move left
-		if(Input.GetKeyDown(Main.keys[userID-1][2]) ){
+		if(Input.GetKey(Main.keys[userID-1][2]) ){
 			//transform.rigidbody.AddForce(new Vector3(speed, 0, 0) );
-			xpos -= speed-boost; if(xpos < -60){ Destroy(gameObject);}
+			xpos = xpos-speed-boost; if(xpos < -60){ Destroy(gameObject);}
 		}
 
 		//move right
-		if(Input.GetKeyDown(Main.keys[userID-1][3]) ){
+		if(Input.GetKey(Main.keys[userID-1][3]) ){
 			//transform.rigidbody.AddForce(new Vector3(-speed, 0, 0) );
-			xpos += speed+boost; if(xpos > 50){xpos = 50; }
+			xpos = xpos+speed+boost; if(xpos > 50){xpos = 50; }
 		}
 
 		//actual movements, fit plane

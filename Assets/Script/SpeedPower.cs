@@ -14,8 +14,9 @@ public class SpeedPower : Object {
 	
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Player"){
-			col.gameObject.GetComponent<Character>().countDown = 20;
-			col.gameObject.GetComponent<Character>().boost += 2;
+			col.gameObject.GetComponent<Character>().countDown += 50;
+			col.gameObject.GetComponent<Character>().boost += 0.5f;
 		}
+		DestroyObject(gameObject);
 	}
 }
