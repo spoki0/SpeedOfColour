@@ -70,7 +70,7 @@ public class Character : MonoBehaviour {
 		}
 
 		//actual movements, fit plane
-		transform.position = new Vector3(xpos, 6, Screen.height/50*lane-25);
+		transform.position = new Vector3(xpos, 3, Screen.height/50*lane-25);
 
 	}
 	IEnumerator WaitDestroy(){
@@ -79,8 +79,9 @@ public class Character : MonoBehaviour {
 	}
 	
 	void OnDisable(){
-		if(currentLane)
+		if(currentLane){
 			currentLane.GetComponent<Lane>().hasPlayerOn = false;
+		}
 		Main.listColours.Remove(colour);
 		Stage.listPlayers.Remove(gameObject);
 		
