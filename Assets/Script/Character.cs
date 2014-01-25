@@ -21,6 +21,12 @@ public class Character : MonoBehaviour {
 		transform.position = new Vector3(0, 0, Screen.height/5* lane/10-23);
 
 		colour = Main.listColours[ _id-1 ];
+		
+		ChangeColour();
+	}
+	
+	void ChangeColour(){
+		transform.renderer.material.color = colour;	
 	}
 
 	// Update is called once per frame
