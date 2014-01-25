@@ -7,12 +7,14 @@ public class Character : MonoBehaviour {
 	int lane;
 	int xpos;
 	int speed;
+	public int boost;
+	public int countDown;
 	Color colour;
 	GameObject currentLane;
 
 	// Use this for initialization
 	void Start () {
-
+		countDown = 0;
 	}
 
 	void setID(int _id){
@@ -52,24 +54,31 @@ public class Character : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		if(countDown == 0)
+			boost = 0;
+		if(countDown > 0)
+			countDown --;
+		
 		//move up
 		if(Input.GetKeyDown(Main.keys[userID-1][0]) ){
 			lane++; if (lane > 5){lane = 5;}
 		}
+
 		//move down
 		if(Input.GetKeyDown(Main.keys[userID-1][1]) ){
 			lane--; if (lane < 1){lane = 1;}
 		}
+
 		//move left
 		if(Input.GetKeyDown(Main.keys[userID-1][2]) ){
 			//transform.rigidbody.AddForce(new Vector3(speed, 0, 0) );
-			xpos -= speed; if(xpos < -60){ Destroy(gameObject);}
+			xpos -= speed-boost; if(xpos < -60){ Destroy(gameObject);}
 		}
+
 		//move right
 		if(Input.GetKeyDown(Main.keys[userID-1][3]) ){
 			//transform.rigidbody.AddForce(new Vector3(-speed, 0, 0) );
-			xpos += speed; if(xpos > 50){xpos = 50; }
+			xpos += speed+boost; if(xpos > 50){xpos = 50; }
 		}
 
 		//actual movements, fit plane
