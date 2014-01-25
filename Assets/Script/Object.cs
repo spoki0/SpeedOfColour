@@ -9,11 +9,11 @@ public class Object : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//MoveSelf();
+	}	
 	
-	}
-	
-	void MoveSelf(){
+	public void MoveSelf(){
 		Vector3 speed = new Vector3(Main.ultimateSpeed,0,0);
-		this.rigidbody.AddForce(speed);	
+		transform.rigidbody.AddForce(speed);	
 	}
 }

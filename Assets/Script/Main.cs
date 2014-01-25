@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Main : MonoBehaviour {
 	
-	public static float ultimateSpeed = -1 * Time.deltaTime;
+	public static float ultimateSpeed = -10;
 	public GameObject stage;
 	
 	// Use this for initialization
@@ -17,6 +17,6 @@ public class Main : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		Instantiate(stage, stage.transform.position, stage.transform.rotation);
+		Instantiate(stage, new Vector3(0,0,0), stage.transform.rotation);
 	}
 }

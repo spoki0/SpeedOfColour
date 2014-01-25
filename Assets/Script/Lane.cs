@@ -4,6 +4,8 @@ using System.Collections;
 public class Lane : MonoBehaviour {
 	
 	public Rigidbody[] arrayObjects;
+	public Color colourValues;
+	int randomSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -15,13 +17,19 @@ public class Lane : MonoBehaviour {
 	
 	}
 	
+	void AddColour(){
+		print ("colorChanged");
+	}
+	
 	IEnumerator SpawnObject(){
-		yield return new WaitForSeconds(10);
-		int randomSpawn = Random.Range(0,2);
+		yield return new WaitForSeconds(5);
+		randomSpawn = Random.Range(0,2);
 		
 		if(randomSpawn == 0){
-			randomSpawn = Random.Range(0,1);
-			Instantiate(arrayObjects[randomSpawn],arrayObjects[randomSpawn].position,arrayObjects[randomSpawn].rotation);
+			randomSpawn = Random.Range(0,2);
+			if(randomSpawn == 0)
+				Instantiate(arrayObjects[randomSpawn],new Vector3(transform.position.x+50, transform.position.y, transform.position.z),arrayObjects[randomSpawn].rotation);
 		}
+		StartCoroutine("SpawnObject");
 	}
 }
