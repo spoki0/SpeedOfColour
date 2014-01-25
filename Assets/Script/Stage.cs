@@ -27,7 +27,7 @@ public class Stage : MonoBehaviour {
 		for(int i = 1; i <= 5; i++){
 			GameObject currentLane = (GameObject)Instantiate(lane.gameObject, lane.transform.position, lane.transform.rotation);
 			
-			currentLane.transform.position = new Vector3(0,0,Screen.height/50*i-25);
+			currentLane.transform.position = new Vector3(0,0,Screen.height/50*i-23);
 			listLanes.Add(currentLane);
 		}
 	}
