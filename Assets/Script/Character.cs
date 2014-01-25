@@ -37,4 +37,8 @@ public class Character : MonoBehaviour {
 		transform.position = new Vector3(0, 0, Screen.height/5* lane/10-23);
 
 	}
+	
+	void OnDisable(){
+		Main.listColours.Remove(colour);
+	}
 }
