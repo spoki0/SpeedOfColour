@@ -5,6 +5,7 @@ public class Lane : MonoBehaviour {
 	
 	public Rigidbody[] arrayObjects;
 	public Color colourValues;
+	public GameObject blocker;
 	int randomSpawn;
 
 	// Use this for initialization
@@ -14,11 +15,27 @@ public class Lane : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 	
-	void AddColour(){
-		print ("colorChanged");
+	void AddGate(bool isChosen){
+		GameObject currentBlocker = (GameObject)Instantiate(blocker, blocker.transform.position, blocker.transform.rotation);
+			
+		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
+		
+		if(isChosen){
+			colourValues = currentBlocker.renderer.material.color;
+			colourValues.r = 1;
+			colourValues.b = 0;
+			colourValues.g = 0;
+			currentBlocker.renderer.material.color = colourValues;
+		}
+		else{
+			colourValues = currentBlocker.renderer.material.color;
+			colourValues.r = 0.5f;
+			colourValues.b = 0.5f;
+			colourValues.g = 0.5f;
+			currentBlocker.renderer.material.color = colourValues;	
+		}
 	}
 	
 	IEnumerator SpawnObject(){
