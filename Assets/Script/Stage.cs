@@ -19,7 +19,7 @@ public class Stage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 	
 	void SpawnLanes(){
@@ -44,7 +44,7 @@ public class Stage : MonoBehaviour {
 
 
 	IEnumerator SpawnBlocker(){
-		yield return new WaitForSeconds(10);
+		yield return new WaitForSeconds(2);
 		
 		int chosenGate = Random.Range(0,listLanes.Count);
 		

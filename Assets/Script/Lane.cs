@@ -4,8 +4,10 @@ using System.Collections;
 public class Lane : MonoBehaviour {
 	
 	public Rigidbody[] arrayObjects;
-	public Color colourValues;
+	public Color gateColour;
+	public Color laneColour;
 	public GameObject blocker;
+	public bool needsColour;
 	int randomSpawn;
 
 	// Use this for initialization
@@ -18,24 +20,38 @@ public class Lane : MonoBehaviour {
 	}
 	
 	void AddGate(bool isChosen){
+		needsColour = isChosen;
 		GameObject currentBlocker = (GameObject)Instantiate(blocker, blocker.transform.position, blocker.transform.rotation);
-			
+		
 		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
 		
 		if(isChosen){
-			colourValues = currentBlocker.renderer.material.color;
-			colourValues.r = 1;
-			colourValues.b = 0;
-			colourValues.g = 0;
-			currentBlocker.renderer.material.color = colourValues;
+			float randomBlue = Random.Range(0.0f, 1.0f);
+			float randomGreen = Random.Range(0.0f, 1.0f);
+			float randomRed = Random.Range(0.0f, 1.0f);
+			
+			gateColour = currentBlocker.renderer.material.color;
+			gateColour.r = randomRed;
+			gateColour.b = randomBlue;
+			gateColour.g = randomGreen;
+			currentBlocker.renderer.material.color = gateColour;
 		}
 		else{
-			colourValues = currentBlocker.renderer.material.color;
-			colourValues.r = 0.5f;
-			colourValues.b = 0.5f;
-			colourValues.g = 0.5f;
-			currentBlocker.renderer.material.color = colourValues;	
+			gateColour = currentBlocker.renderer.material.color;
+			gateColour.r = 0.5f;
+			gateColour.b = 0.5f;
+			gateColour.g = 0.5f;
+			currentBlocker.renderer.material.color = gateColour;	
 		}
+	}
+	
+	void LaneColour(Color characterColour){
+		laneColour = transform.renderer.material.color;
+		laneColour.r -= (laneColour.r - characterColour.r)/50;
+		laneColour.b -= (laneColour.b - characterColour.b)/50;
+		laneColour.g -= (laneColour.g - characterColour.g)/50;
+		
+		transform.renderer.material.color = laneColour;
 	}
 	
 	IEnumerator SpawnObject(){
