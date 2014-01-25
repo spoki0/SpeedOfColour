@@ -34,7 +34,8 @@ public class Stage : MonoBehaviour {
 
 	void SpawnPlayers(int _num){
 		for (int i = 1; i <= _num; i++){
-			GameObject currentPlayer = (GameObject)Instantiate(player.gameObject, player.transform.position, player.transform.rotation);
+			GameObject currentPlayer = new GameObject(); 
+			currentPlayer = (GameObject)Instantiate(player.gameObject, player.transform.position, player.transform.rotation);
 			listPlayers.Add(currentPlayer);
 
 			currentPlayer.SendMessage("setID", i);

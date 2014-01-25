@@ -70,7 +70,8 @@ public class Lane : MonoBehaviour {
 			laneColour.b -= (laneColour.b - 1f)/15;
 			laneColour.g -= (laneColour.g - 1f)/15;
 		}
-		laneColour.a = 0.01f;
+		laneColour.a = 0.3f;
+		transform.renderer.material.shader = Shader.Find( "Transparent/Diffuse" );
 		transform.renderer.material.color = laneColour;
 	}
 	
@@ -84,5 +85,9 @@ public class Lane : MonoBehaviour {
 				Instantiate(arrayObjects[randomSpawn],new Vector3(transform.position.x+50, transform.position.y, transform.position.z),arrayObjects[randomSpawn].rotation);
 		}
 		StartCoroutine("SpawnObject");
+	}
+	
+	void OnDisable(){
+		Stage.listLanes.Remove(gameObject);	
 	}
 }
