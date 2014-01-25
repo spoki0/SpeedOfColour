@@ -19,18 +19,33 @@ public class Blocker : Object {
 			
 
 			bool valid = true;
+			if (currentLane.renderer.material.color.r <= 0.4f){
+				if (transform.renderer.material.color.r >= 0.4f){
+					valid = false;
+				}
+			}
 			if (currentLane.renderer.material.color.r >= 0.4f){
-				if (transform.renderer.material.color.r == 0){
+				if (transform.renderer.material.color.r == 0.0f){
+					valid = false;
+				}
+			}
+			if (currentLane.renderer.material.color.g <= 0.4f){
+				if (transform.renderer.material.color.g >= 0.4f){
 					valid = false;
 				}
 			}
 			if (currentLane.renderer.material.color.g >= 0.4f){
-				if (transform.renderer.material.color.g == 0){
+				if (transform.renderer.material.color.g == 0.0f){
+					valid = false;
+				}
+			}
+			if (currentLane.renderer.material.color.b <= 0.4f){
+				if (transform.renderer.material.color.b >= 0.4f){
 					valid = false;
 				}
 			}
 			if (currentLane.renderer.material.color.b >= 0.4f){
-				if (transform.renderer.material.color.b == 0){
+				if (transform.renderer.material.color.b == 0.0f){
 					valid = false;
 				}
 			}
@@ -39,6 +54,7 @@ public class Blocker : Object {
 			   transform.renderer.material.color.b == 0.5f){	
 				valid = false;
 			}
+	
 			if (valid){
 				Destroy(gameObject);
 			}
