@@ -27,7 +27,13 @@ public class Character : MonoBehaviour {
 	
 	void OnTriggerStay(Collider col){
 		if(col.gameObject.name == "Lane(Clone)"){
+			col.GetComponent<Lane>().hasPlayerOn = true;
 			col.gameObject.SendMessage("LaneColour", colour);
+		}
+	}
+	void OnTriggerExit(Collider col){
+		if(col.gameObject.name == "Lane(Clone)"){
+			col.GetComponent<Lane>().hasPlayerOn = false;
 		}
 	}
 

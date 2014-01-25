@@ -8,15 +8,21 @@ public class Lane : MonoBehaviour {
 	public Color laneColour;
 	public GameObject blocker;
 	public bool needsColour;
+	public bool hasPlayerOn;
+	Color defaultColour;
 	int randomSpawn;
 
 	// Use this for initialization
 	void Start () {
+		defaultColour = transform.renderer.material.color;
 		StartCoroutine("SpawnObject");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(!hasPlayerOn){
+			LaneColour(defaultColour);
+		}
 	}
 	
 	void AddGate(bool isChosen){
@@ -49,9 +55,9 @@ public class Lane : MonoBehaviour {
 	
 	void LaneColour(Color characterColour){
 		laneColour = transform.renderer.material.color;
-		laneColour.r -= (laneColour.r - characterColour.r)/20;
-		laneColour.b -= (laneColour.b - characterColour.b)/20;
-		laneColour.g -= (laneColour.g - characterColour.g)/20;
+		laneColour.r -= (laneColour.r - characterColour.r)/5;
+		laneColour.b -= (laneColour.b - characterColour.b)/5;
+		laneColour.g -= (laneColour.g - characterColour.g)/5;
 		
 		transform.renderer.material.color = laneColour;
 	}
