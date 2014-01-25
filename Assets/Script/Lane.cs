@@ -46,9 +46,9 @@ public class Lane : MonoBehaviour {
 		}
 		else{
 			gateColour = currentBlocker.renderer.material.color;
-			gateColour.r = 0.5f;
-			gateColour.g = 0.5f;
-			gateColour.b = 0.5f;
+			gateColour.r = 0.0f;
+			gateColour.g = 0.0f;
+			gateColour.b = 0.0f;
 		}
 
 		currentBlocker.renderer.material.color = gateColour;	
