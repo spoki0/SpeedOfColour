@@ -1,0 +1,25 @@
+projects := List Of Projects Seperated By Space
+destdir := Destination Path
+
+targets := $(foreach project,$(projects),\
+    $(destdir)/$(project)/$(project).ftp\
+    $(addprefix $(destdir)/,$(wildcard $(project)/*.wav))\
+  )
+
+.PHONY: all
+
+all : $(targets)
+
+$(destdir)/%.ftp : %.fdp
+	mono FdpToFtpConverter.exe $(<D) $(<D) $(@D)
+	mv $(@D)\\$(@F) $@
+
+$(destdir)/%.wav : %.wav
+	cp -a $< $@
+
+$(sort $(dir $(targets))) :
+	mkdir -p $@
+
+# add an order-only dependency for each target on its containing directory
+.SECONDEXPANSION:
+$(targets) : % : | $$(@D)
