@@ -17,9 +17,10 @@ public class SlowPower : Object {
 	
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Player"){
-			col.gameObject.GetComponent<Character>().countDown += 50;
+			col.gameObject.GetComponent<Character>().countDown = 50;
 			col.gameObject.GetComponent<Character>().boost -= 0.5f;
 		}
+		DestroyObject(gameObject);
 	}
 	// Update is called once per frame
 	//void Update () {
