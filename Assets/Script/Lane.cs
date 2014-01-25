@@ -26,14 +26,15 @@ public class Lane : MonoBehaviour {
 		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
 		
 		if(isChosen){
-			float randomBlue = Random.Range(0.0f, 1.0f);
-			float randomGreen = Random.Range(0.0f, 1.0f);
-			float randomRed = Random.Range(0.0f, 1.0f);
+			int randomNr = Random.Range(0, Main.listColours.Count);
+			Color randomColour = Main.listColours[randomNr];
+			randomNr = Random.Range(0, Main.listColours.Count);
+			Color randomColour2 = Main.listColours[randomNr];
 			
 			gateColour = currentBlocker.renderer.material.color;
-			gateColour.r = randomRed;
-			gateColour.b = randomBlue;
-			gateColour.g = randomGreen;
+			gateColour.r = (randomColour.r + randomColour2.r)/2;
+			gateColour.b = (randomColour.b + randomColour2.b)/2;
+			gateColour.g = (randomColour.g + randomColour2.g)/2;
 			currentBlocker.renderer.material.color = gateColour;
 		}
 		else{
@@ -47,9 +48,9 @@ public class Lane : MonoBehaviour {
 	
 	void LaneColour(Color characterColour){
 		laneColour = transform.renderer.material.color;
-		laneColour.r -= (laneColour.r - characterColour.r)/50;
-		laneColour.b -= (laneColour.b - characterColour.b)/50;
-		laneColour.g -= (laneColour.g - characterColour.g)/50;
+		laneColour.r -= (laneColour.r - characterColour.r);
+		laneColour.b -= (laneColour.b - characterColour.b);
+		laneColour.g -= (laneColour.g - characterColour.g);
 		
 		transform.renderer.material.color = laneColour;
 	}

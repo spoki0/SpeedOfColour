@@ -15,14 +15,29 @@ public class Character : MonoBehaviour {
 	}
 
 	void setID(int _id){
-		userID = _id;
+		//userID = _id;
 		lane = _id;
-		speed = Main.ultimateSpeed;
-		transform.position = new Vector3(0, 0, Screen.height/5* lane/10-23);
+		//speed = Main.ultimateSpeed;
+		transform.position = new Vector3(0, 7, Screen.height/5* lane/10-23);
 
 		colour = Main.listColours[ _id-1 ];
 		
 		ChangeColour();
+	}
+	
+	void OnTriggerEnter(Collider col){
+		if(col.gameObject.name == "Lane(Clone)"){
+			col.gameObject.SendMessage("LaneColour", colour);
+		}
+	}
+	void OnTriggerExit(Collider col){
+		if(col.gameObject.name == "Lane(Clone)"){
+			Color tempColour = transform.renderer.material.color;
+			tempColour.r = 1;
+			tempColour.g = 1;
+			tempColour.b = 1;
+			col.gameObject.SendMessage("LaneColour", tempColour);
+		}
 	}
 	
 	void ChangeColour(){
@@ -42,7 +57,7 @@ public class Character : MonoBehaviour {
 		}
 
 		//actual movements, fit plane
-		transform.position = new Vector3(0, 0, Screen.height/5* lane/10-23);
+		transform.position = new Vector3(0, 6, Screen.height/5* lane/10-23);
 
 	}
 	

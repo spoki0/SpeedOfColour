@@ -9,7 +9,7 @@ public class Main : MonoBehaviour {
 	public GameObject stage;
 	Color randomColour;
 	int randomCInt;
-	int nrPlayers;
+	public static int nrPlayers;
 	
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class Main : MonoBehaviour {
 	}
 	
 	void StartGame(){
-		nrPlayers = 1;
+		nrPlayers = 2;
 		
 		for(int i = 0; i<nrPlayers; i++){
 			randomColour.g = 0;
