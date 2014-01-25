@@ -5,6 +5,7 @@ public class Character : MonoBehaviour {
 
 	int userID;
 	int lane;
+	int xpos;
 	float speed;
 	Color colour;
 		
@@ -17,7 +18,7 @@ public class Character : MonoBehaviour {
 	void setID(int _id){
 		userID = _id;
 		lane = _id;
-		//speed = Main.ultimateSpeed;
+		xpos = 0;
 		transform.position = new Vector3(0, 7, Screen.height/5* lane/10-23);
 
 		colour = Main.listColours[ _id-1 ];
@@ -45,16 +46,24 @@ public class Character : MonoBehaviour {
 	void Update () {
 	
 		//move up
-		if(Input.GetKeyDown(KeyCode.UpArrow) ){
+		if(Input.GetKeyDown(Main.keys[userID-1][0]) ){
 			lane++; if (lane > 5){lane = 5;}
 		}
 		//move down
-		if(Input.GetKeyDown(KeyCode.DownArrow) ){
+		if(Input.GetKeyDown(Main.keys[userID-1][1]) ){
 			lane--; if (lane < 1){lane = 1;}
+		}
+		//move left
+		if(Input.GetKeyDown(Main.keys[userID-1][2]) ){
+			xpos -= 5;
+		}
+		//move right
+		if(Input.GetKeyDown(Main.keys[userID-1][3]) ){
+			xpos += 5;
 		}
 
 		//actual movements, fit plane
-		transform.position = new Vector3(0, 6, Screen.height/5* lane/10-23);
+		transform.position = new Vector3(xpos, 6, Screen.height/5* lane/10-23);
 
 	}
 	

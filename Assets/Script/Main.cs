@@ -6,6 +6,7 @@ public class Main : MonoBehaviour {
 	
 	public static float ultimateSpeed = -10;
 	public static List<Color> listColours = new List<Color>();
+	public static List< List<KeyCode> > keys = new List< List<KeyCode> >();
 	public GameObject stage;
 	Color randomColour;
 	int randomCInt;
@@ -13,6 +14,27 @@ public class Main : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
+		List<KeyCode> Player1 = new List<KeyCode>();
+		Player1.Add(KeyCode.UpArrow);
+		Player1.Add(KeyCode.DownArrow);
+		Player1.Add(KeyCode.LeftArrow);
+		Player1.Add(KeyCode.RightArrow);
+
+		List<KeyCode> Player2 = new List<KeyCode>();
+		Player2.Add(KeyCode.W);
+		Player2.Add(KeyCode.S);
+		Player2.Add(KeyCode.A);
+		Player2.Add(KeyCode.D);
+
+		keys.Add (Player1);
+		keys.Add (Player2);
+
+
+
+
+
+
 		StartGame();
 	}
 	
