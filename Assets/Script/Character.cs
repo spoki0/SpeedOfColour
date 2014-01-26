@@ -59,12 +59,12 @@ public class Character : MonoBehaviour {
 		
 		//move up
 		if(Input.GetKeyDown(Main.keys[userID-1][0]) ){
-			lane--; if (lane > 5){lane = 5;}
+			lane--; if (lane < 1){lane = 1;}
 		}
 
 		//move down
 		else if(Input.GetKeyDown(Main.keys[userID-1][1]) ){
-			lane++; if (lane < 1){lane = 1;}
+			lane++; if (lane > 5){lane = 5;}
 		}
 
 		//move left
