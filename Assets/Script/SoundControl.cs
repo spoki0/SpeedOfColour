@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundControl{
+public class SoundControl : MonoBehaviour {
 	
 	AudioSource audioSource;
 	AudioClip sound;
@@ -19,6 +19,7 @@ public class SoundControl{
 
 		//Buggy?
 		Debug.Log("Play sound event " +audioFile);
+		Fabric.EventManager.Instance.PostEvent(audioFile);
 	}
 	
 	// Update is called once per frame
