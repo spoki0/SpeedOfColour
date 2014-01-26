@@ -28,6 +28,7 @@ public class Score : MonoBehaviour {
 		}
 		
 		GUI.Label(playerScore, "" +PlayerPrefs.GetInt("PlayerScore"));
+		GUI.Label(teamScore, "" +PlayerPrefs.GetInt("TeamScore"));
 		
 		GUI.EndGroup();
 	}

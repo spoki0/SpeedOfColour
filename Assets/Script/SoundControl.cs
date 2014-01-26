@@ -1,0 +1,26 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class SoundControl{
+	
+	AudioSource audioSource;
+	AudioClip sound;
+	
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	public static void PlaySound(string audioFile){
+		/*
+		audioSource = (AudioSource)gameObject.AddComponent(audioFile);	
+		sound = (AudioClip)Resources.Load(audioFile);
+		audioSource.clip = sound;*/
+		Debug.Log("Play sound event " +audioFile);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+}
