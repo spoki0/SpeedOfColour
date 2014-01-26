@@ -14,7 +14,9 @@ public class Object : MonoBehaviour {
 		if (transform.position.x < -45){
 			Destroy(gameObject);
 		}
-	}	
+	}
+
+
 	
 	public void MoveSelf(){
 		Vector3 speed = new Vector3(Main.ultimateSpeed,0,0);
