@@ -74,6 +74,6 @@ public class Main : MonoBehaviour {
 	
 	void GameOver(){
 		if(listColours.Count <= 0)
-			Application.LoadLevel(0);
+			Application.LoadLevel(1);
 	}
 }
