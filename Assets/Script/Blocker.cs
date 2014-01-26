@@ -59,9 +59,6 @@ public class Blocker : Object {
 				Destroy(gameObject);
 			}
 			if(!valid){
-
-				SoundControl.PlaySound( Main.userName[col.gameObject.GetComponent<Character>().userID]+"Death" );
-
 				Destroy(col.gameObject);
 				//col.gameObject.SendMessage(StartCoroutine("WaitDestroy"));
 			}

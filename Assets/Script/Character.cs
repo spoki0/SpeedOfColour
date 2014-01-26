@@ -4,7 +4,7 @@ using System.Collections;
 public class Character : MonoBehaviour {
 	
 	public int playerScore;
-	public int userID;
+	int userID;
 	int lane;
 	float xpos;
 	float speed;
