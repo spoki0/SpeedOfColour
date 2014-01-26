@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundControl{
+public class SoundControl : MonoBehaviour {
 	
 	AudioSource audioSource;
 	AudioClip sound;
