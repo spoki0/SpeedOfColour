@@ -16,6 +16,8 @@ public class SoundControl{
 		audioSource = (AudioSource)gameObject.AddComponent(audioFile);	
 		sound = (AudioClip)Resources.Load(audioFile);
 		audioSource.clip = sound;*/
+
+		//Buggy?
 		Debug.Log("Play sound event " +audioFile);
 	}
 	
