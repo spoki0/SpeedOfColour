@@ -76,12 +76,12 @@ public class Lane : MonoBehaviour {
 	}
 	
 	IEnumerator SpawnObject(){
-		yield return new WaitForSeconds(5);
-		randomSpawn = Random.Range(0,2);
+		yield return new WaitForSeconds(7);
+		randomSpawn = Random.Range(0,3);
 		
 		if(randomSpawn == 0){
 			randomSpawn = Random.Range(0,arrayObjects.Length);
-			Instantiate(arrayObjects[randomSpawn],new Vector3(transform.position.x+50, transform.position.y+3, transform.position.z),arrayObjects[randomSpawn].rotation);
+			Instantiate(arrayObjects[randomSpawn],new Vector3(45, transform.position.y+3, transform.position.z),arrayObjects[randomSpawn].rotation);
 		}
 		StartCoroutine("SpawnObject");
 	}
