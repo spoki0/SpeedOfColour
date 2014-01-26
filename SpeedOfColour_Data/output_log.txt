@@ -19,7 +19,7 @@ Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Mana
 Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.LoudnessMeter.dll into Unity Child Domain
 Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.ModularSynth.dll (this message is harmless)
 Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.ModularSynth.dll into Unity Child Domain
-- Completed reload, in  0.043 seconds
+- Completed reload, in  0.048 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -28,9 +28,13 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1657)
 
-UnloadTime: 0.327563 ms
+The class defined in the script file named 'SoundControl' is not derived from MonoBehaviour or ScriptableObject!
+ 
+(Filename:  Line: 1568)
+
+UnloadTime: 0.692331 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 273.
-Total: 0.456280 ms (FindLiveObjects: 0.012401 ms CreateObjectMapping: 0.007269 ms MarkObjects: 0.133420 ms  DeleteObjects: 0.005986 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 3464.
+Total: 1.553148 ms (FindLiveObjects: 0.146676 ms CreateObjectMapping: 0.074835 ms MarkObjects: 0.726113 ms  DeleteObjects: 0.018388 ms)
 

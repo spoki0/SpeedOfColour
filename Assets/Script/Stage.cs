@@ -6,6 +6,10 @@ public class Stage : MonoBehaviour {
 	
 	public Rigidbody lane = new Rigidbody();
 	public Rigidbody player = new Rigidbody();
+	public Rigidbody player2 = new Rigidbody();
+	public Rigidbody player3 = new Rigidbody();
+	public Rigidbody player4 = new Rigidbody();
+	public Rigidbody[] players;
 	public int mainScore;
 
 	public static List<GameObject> listLanes = new List<GameObject>();
@@ -44,7 +48,7 @@ public class Stage : MonoBehaviour {
 		Main.listScores.Add(mainScore);
 		for (int i = 1; i <= _num; i++){
 			GameObject currentPlayer = new GameObject(); 
-			currentPlayer = (GameObject)Instantiate(player.gameObject, player.transform.position, player.transform.rotation);
+			currentPlayer = (GameObject)Instantiate(players[i-1].gameObject, player.transform.position, player.transform.rotation);
 			listPlayers.Add(currentPlayer);
 			Main.listScores.Add(currentPlayer.GetComponent<Character>().playerScore);
 
