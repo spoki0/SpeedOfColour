@@ -6,13 +6,6 @@ public class SlowPower : Object {
 	// Use this for initialization
 	void Start () {
 		base.Start();
-		
-		Color tempColour = transform.renderer.material.color;
-		tempColour.g = 0.5f;
-		tempColour.r = 0;
-		tempColour.b = 0.5f;
-		
-		transform.renderer.material.color = tempColour;
 	}
 	
 	void OnCollisionEnter(Collision col){

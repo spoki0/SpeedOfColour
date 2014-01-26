@@ -38,7 +38,7 @@ public class Lane : MonoBehaviour {
 		
 		Stage.listBlockers.Add(currentBlocker);
 		currentBlocker.SendMessage("GetCurrentLane", gameObject);
-		currentBlocker.transform.position = new Vector3(40,0,transform.position.z);
+		currentBlocker.transform.position = new Vector3(50,0,transform.position.z);
 
 		Color gateColour = new Color(0,0,0);
 
@@ -82,12 +82,12 @@ public class Lane : MonoBehaviour {
 	}
 	
 	IEnumerator SpawnObject(){
-		yield return new WaitForSeconds(7);
+		yield return new WaitForSeconds(3);
 		randomSpawn = Random.Range(0,3);
 		
-		if(randomSpawn == 0){
-			randomSpawn = Random.Range(0,arrayObjects.Length);
-			Instantiate(arrayObjects[randomSpawn],new Vector3(45, transform.position.y+3, transform.position.z),arrayObjects[randomSpawn].rotation);
+		if(randomSpawn != 2){
+
+			Instantiate(arrayObjects[randomSpawn],new Vector3(50, transform.position.y+3, transform.position.z),arrayObjects[randomSpawn].rotation);
 		}
 		StartCoroutine("SpawnObject");
 	}

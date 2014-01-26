@@ -34,7 +34,7 @@ public class Stage : MonoBehaviour {
 			
 			//scrolle fra x = 38 -> x = -39 -Random.Range(0, 70)
 			GameObject currentLane = (GameObject)Instantiate(lane.gameObject, lane.transform.position, lane.transform.rotation);
-			currentLane.transform.position = new Vector3((35-Random.Range(0, 70)), 0, 16 - currentLane.renderer.bounds.size.z*i);
+			currentLane.transform.position = new Vector3((30-Random.Range(0, 60)), 0, 16 - currentLane.renderer.bounds.size.z*i);
 
 			listLanes.Add(currentLane);
 		}

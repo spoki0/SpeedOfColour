@@ -12,10 +12,11 @@ public class SoundControl{
 	}
 	
 	public static void PlaySound(string audioFile){
+		/*
 		audioSource = (AudioSource)gameObject.AddComponent(audioFile);	
 		sound = (AudioClip)Resources.Load(audioFile);
-		audioSource.clip = sound;
-		audioSource.Play();
+		audioSource.clip = sound;*/
+		Debug.Log("Play sound event " +audioFile);
 	}
 	
 	// Update is called once per frame
