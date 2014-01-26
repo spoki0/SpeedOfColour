@@ -79,7 +79,7 @@ public class Character : MonoBehaviour {
 		}
 
 		//actual movements, fit plane
-		transform.position = new Vector3(xpos, 3, Stage.listLanes[lane-1].transform.position.z);
+		transform.position = new Vector3(xpos, 3, Stage.listLanes[lane-1].transform.position.z-3);
 		
 		IncreaseScore();
 	}
