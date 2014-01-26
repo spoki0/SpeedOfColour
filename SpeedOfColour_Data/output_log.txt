@@ -1,0 +1,26 @@
+Initialize engine version: 4.2.0f4 (38efbd14869d)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dumx.dll 9.18.13.3182]
+    Renderer: NVIDIA Quadro 3000M
+    Vendor:   NVIDIA
+    VRAM:     1998 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 DF24=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.Core.dll (this message is harmless)
+Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.Core.dll into Unity Child Domain
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.ModularSynth.dll (this message is harmless)
+Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.ModularSynth.dll into Unity Child Domain
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.AudioSpline.dll (this message is harmless)
+Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.AudioSpline.dll into Unity Child Domain
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.LoudnessMeter.dll (this message is harmless)
+Loading D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.LoudnessMeter.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: D:\Skole\Speed of Color\SpeedOfColour\SpeedOfColour_Data\Managed\System.dll (this message is harmless)

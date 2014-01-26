@@ -34,10 +34,10 @@ public class Main : MonoBehaviour {
 		Player3.Add(KeyCode.J);
 
 		List<KeyCode> Player4 = new List<KeyCode>();
-		Player4.Add(KeyCode.Mouse5);
-		Player4.Add(KeyCode.Mouse6);
-		Player4.Add(KeyCode.Mouse0);
-		Player4.Add(KeyCode.Mouse1);
+		Player4.Add(KeyCode.Keypad5);
+		Player4.Add(KeyCode.Keypad2);
+		Player4.Add(KeyCode.Keypad1);
+		Player4.Add(KeyCode.Keypad3);
 
 		keys.Add(Player1);
 		keys.Add(Player2);
@@ -54,7 +54,7 @@ public class Main : MonoBehaviour {
 	
 	void StartGame(){
 
-		nrPlayers = 2;
+		nrPlayers = 4;
 		
 		for(int i = 1; i <= nrPlayers; i++){
 

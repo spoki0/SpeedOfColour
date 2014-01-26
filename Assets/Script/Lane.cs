@@ -70,8 +70,8 @@ public class Lane : MonoBehaviour {
 			laneColour.b -= (laneColour.b - 1f)/15;
 			laneColour.g -= (laneColour.g - 1f)/15;
 		}
-		laneColour.a = 0.3f;
-		transform.renderer.material.shader = Shader.Find( "Transparent/Diffuse" );
+		//laneColour.a = 0.3f;
+		//transform.renderer.material.shader = Shader.Find( "Transparent/Diffuse" );
 		transform.renderer.material.color = laneColour;
 	}
 	
