@@ -24,10 +24,13 @@ public class Stage : MonoBehaviour {
 	}
 	
 	void SpawnLanes(){
-		for(int i = 1; i <= 5; i++){
+		for(int i = 0; i < 5; i++){
 			GameObject currentLane = (GameObject)Instantiate(lane.gameObject, lane.transform.position, lane.transform.rotation);
-			
-			currentLane.transform.position = new Vector3(0,0,Screen.height/50*i - 25);
+
+			print(Screen.height);
+
+
+			currentLane.transform.position = new Vector3(0,0,Screen.height/84*i-Screen.height/45);
 			listLanes.Add(currentLane);
 		}
 	}
