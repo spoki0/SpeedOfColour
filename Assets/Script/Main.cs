@@ -8,6 +8,7 @@ public class Main : MonoBehaviour {
 	public static List<Color> listColours = new List<Color>();
 	public static List< List<KeyCode> > keys = new List< List<KeyCode> >();
 	public GameObject stage;
+	public static List<int> listScores = new List<int>();
 	Color randomColour;
 	int randomCInt;
 	public static int nrPlayers;
@@ -73,7 +74,10 @@ public class Main : MonoBehaviour {
 	}
 	
 	void GameOver(){
-		if(listColours.Count <= 0)
-			Application.LoadLevel(1);
+		if(listColours.Count <= 0){
+			PlayerPrefs.SetInt("PlayerScore", listScores[1]);
+			PlayerPrefs.SetInt("TeamScore", listScores[0]);
+			Application.LoadLevel(2);
+		}
 	}
 }
