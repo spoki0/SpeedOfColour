@@ -16,7 +16,9 @@ public class Lane : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		defaultColour = transform.renderer.material.color;
+
 		StartCoroutine("SpawnObject");
+	
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,10 @@ public class Lane : MonoBehaviour {
 		if(!hasPlayerOn){
 			LaneColour(defaultColour);
 		}
+		/*
+		transform.position = new Vector3(transform.position.x-0.25f, transform.position.y, transform.position.z);
+		if (transform.position.x <= -110){transform.position = new Vector3((38+150), transform.position.y, transform.position.z);}
+		*/
 	}
 	
 	void AddGate(bool isChosen){
@@ -32,7 +38,7 @@ public class Lane : MonoBehaviour {
 		
 		Stage.listBlockers.Add(currentBlocker);
 		currentBlocker.SendMessage("GetCurrentLane", gameObject);
-		currentBlocker.transform.position = new Vector3(transform.position.x+50,0,transform.position.z);
+		currentBlocker.transform.position = new Vector3(40,0,transform.position.z);
 
 		Color gateColour = new Color(0,0,0);
 

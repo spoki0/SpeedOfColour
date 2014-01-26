@@ -24,10 +24,13 @@ public class Stage : MonoBehaviour {
 	}
 	
 	void SpawnLanes(){
+		//First set of lanes
 		for(int i = 0; i < 5; i++){
+			
+			//scrolle fra x = 38 -> x = -39 -Random.Range(0, 70)
 			GameObject currentLane = (GameObject)Instantiate(lane.gameObject, lane.transform.position, lane.transform.rotation);
+			currentLane.transform.position = new Vector3((35-Random.Range(0, 70)), 0, 16 - currentLane.renderer.bounds.size.z*i);
 
-			currentLane.transform.position = new Vector3(0,0, 16 - currentLane.renderer.bounds.size.z*i);
 			listLanes.Add(currentLane);
 		}
 	}
@@ -53,7 +56,7 @@ public class Stage : MonoBehaviour {
 		int temp = Random.Range(0, 2);
 		if( temp == 0){
 
-			for(int i = 0; i <= listLanes.Count-1; i++){
+			for(int i = 0; i < listLanes.Count; i++){
 				if(i == chosenGate){
 					listLanes[i].SendMessage("AddGate", true);
 				} else {
