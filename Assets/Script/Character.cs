@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class Character : MonoBehaviour {
-
+	
+	public int playerScore;
 	int userID;
 	int lane;
 	float xpos;
@@ -79,8 +80,14 @@ public class Character : MonoBehaviour {
 
 		//actual movements, fit plane
 		transform.position = new Vector3(xpos, 3, Stage.listLanes[lane-1].transform.position.z);
-
+		
+		IncreaseScore();
 	}
+	
+	void IncreaseScore(){
+		Main.listScores[userID] ++;
+	}
+	
 	IEnumerator WaitDestroy(){
 		yield return new WaitForSeconds(2);
 		Destroy(gameObject);	
@@ -97,5 +104,7 @@ public class Character : MonoBehaviour {
 		for(int i = 0; i<Stage.listBlockers.Count; i++){
 			Destroy(Stage.listBlockers[i]);
 		}
+		if(Main.nrPlayers > 1)
+			Main.listScores.Remove(playerScore);
 	}
 }

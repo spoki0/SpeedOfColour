@@ -6,6 +6,7 @@ public class Stage : MonoBehaviour {
 	
 	public Rigidbody lane = new Rigidbody();
 	public Rigidbody player = new Rigidbody();
+	public int mainScore;
 
 	public static List<GameObject> listLanes = new List<GameObject>();
 	public static List<GameObject> listBlockers = new List<GameObject>();
@@ -20,7 +21,11 @@ public class Stage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		IncreaseMainScore();
+	}
+	
+	void IncreaseMainScore(){
+		Main.listScores[0] ++;	
 	}
 	
 	void SpawnLanes(){
@@ -36,10 +41,12 @@ public class Stage : MonoBehaviour {
 	}
 
 	void SpawnPlayers(int _num){
+		Main.listScores.Add(mainScore);
 		for (int i = 1; i <= _num; i++){
 			GameObject currentPlayer = new GameObject(); 
 			currentPlayer = (GameObject)Instantiate(player.gameObject, player.transform.position, player.transform.rotation);
 			listPlayers.Add(currentPlayer);
+			Main.listScores.Add(currentPlayer.GetComponent<Character>().playerScore);
 
 			currentPlayer.SendMessage("setID", i);
 			currentPlayer.transform.position = listLanes[ i-1 ].transform.position;
