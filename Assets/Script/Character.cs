@@ -91,6 +91,7 @@ public class Character : MonoBehaviour {
 	void OnDisable(){
 		if(currentLane){
 			currentLane.GetComponent<Lane>().hasPlayerOn = false;
+			currentLane.GetComponent<Lane>().nrPlayersOn --;
 		}
 		Main.listColours.Remove(colour);
 		Stage.listPlayers.Remove(gameObject);

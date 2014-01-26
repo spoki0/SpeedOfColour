@@ -60,7 +60,7 @@ public class Lane : MonoBehaviour {
 	}
 	
 	void LaneColour(Color characterColour){
-		if(nrPlayersOn <3){
+		if(nrPlayersOn < 3){
 			laneColour = transform.renderer.material.color;
 			laneColour.r -= (laneColour.r - characterColour.r)/15;
 			laneColour.b -= (laneColour.b - characterColour.b)/15;
