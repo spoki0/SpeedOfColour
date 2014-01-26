@@ -15,6 +15,7 @@ public class Main : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		soundClass = SoundControl;
 		QualitySettings.antiAliasing = 4;
 		List<KeyCode> Player1 = new List<KeyCode>();
 		Player1.Add(KeyCode.UpArrow);
