@@ -59,24 +59,22 @@ public class Character : MonoBehaviour {
 		
 		//move up
 		if(Input.GetKeyDown(Main.keys[userID-1][0]) ){
-			lane++; if (lane > 5){lane = 5;}
+			lane--; if (lane > 5){lane = 5;}
 		}
 
 		//move down
-		if(Input.GetKeyDown(Main.keys[userID-1][1]) ){
-			lane--; if (lane < 1){lane = 1;}
+		else if(Input.GetKeyDown(Main.keys[userID-1][1]) ){
+			lane++; if (lane < 1){lane = 1;}
 		}
 
 		//move left
-		if(Input.GetKey(Main.keys[userID-1][2]) ){
-			//transform.rigidbody.AddForce(new Vector3(speed, 0, 0) );
-			xpos = xpos-speed-boost; if(xpos < -60){ Destroy(gameObject);}
+		else if(Input.GetKey(Main.keys[userID-1][2]) ){
+			xpos = xpos-speed-boost; if(xpos < -45){ Destroy(gameObject);}
 		}
 
 		//move right
-		if(Input.GetKey(Main.keys[userID-1][3]) ){
-			//transform.rigidbody.AddForce(new Vector3(-speed, 0, 0) );
-			xpos = xpos+speed+boost; if(xpos > 50){xpos = 50; }
+		else if(Input.GetKey(Main.keys[userID-1][3]) ){
+			xpos = xpos+speed+boost; if(xpos > 40){xpos = 40; }
 		}
 
 		//actual movements, fit plane

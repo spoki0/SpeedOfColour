@@ -19,36 +19,80 @@ Platform assembly: C:\Users\Jonathan\Documents\GitHub\SpeedOfColour\SpeedOfColou
 Loading C:\Users\Jonathan\Documents\GitHub\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.LoudnessMeter.dll into Unity Child Domain
 Platform assembly: C:\Users\Jonathan\Documents\GitHub\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.ModularSynth.dll (this message is harmless)
 Loading C:\Users\Jonathan\Documents\GitHub\SpeedOfColour\SpeedOfColour_Data\Managed\Fabric.ModularSynth.dll into Unity Child Domain
-- Completed reload, in  0.208 seconds
+- Completed reload, in  0.193 seconds
 desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Jonathan\Documents\GitHub\SpeedOfColour\SpeedOfColour_Data\Managed\System.dll (this message is harmless)
-768
+900
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-768
+900
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-768
+900
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-768
+900
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-768
+900
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Character.OnDisable () [0x00000] in <filename unknown>:0 
-UnityEngine.Object:Destroy(Object, Single)
-UnityEngine.Object:Destroy(Object)
-Blocker:OnCollisionEnter(Collision)
+UnloadTime: 1.714701 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 179.
+Total: 2.343239 ms (FindLiveObjects: 0.030352 ms CreateObjectMapping: 0.039692 ms MarkObjects: 0.209201 ms  DeleteObjects: 0.309598 ms)
+
+900
  
-(Filename:  Line: -1)
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 1.406036 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 179.
+Total: 2.193809 ms (FindLiveObjects: 0.023348 ms CreateObjectMapping: 0.042027 ms MarkObjects: 0.198927 ms  DeleteObjects: 0.451089 ms)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+900
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 

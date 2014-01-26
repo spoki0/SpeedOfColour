@@ -11,7 +11,7 @@ public class Object : MonoBehaviour {
 	protected virtual void Update () {
 		MoveSelf();
 
-		if (transform.position.x < -60){
+		if (transform.position.x < -45){
 			Destroy(gameObject);
 		}
 	}	
