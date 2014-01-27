@@ -19,7 +19,7 @@ public class SoundControl : MonoBehaviour {
 
 		//Buggy?
 		Debug.Log("Play sound event " +audioFile);
-		Fabric.EventManager.Instance.PostEvent(audioFile);
+		//Fabric.EventManager.Instance.PostEvent(audioFile);
 	}
 	
 	// Update is called once per frame

@@ -9,6 +9,7 @@ public class Main : MonoBehaviour {
 	public static List< List<KeyCode> > keys = new List< List<KeyCode> >();
 	public GameObject stage;
 	public static List<int> listScores = new List<int>();
+	public static List<string> userNames = new List<string>();
 	Color randomColour;
 	int randomCInt;
 	public static int nrPlayers;
@@ -44,6 +45,12 @@ public class Main : MonoBehaviour {
 		keys.Add(Player2);
 		keys.Add(Player3);
 		keys.Add(Player4);
+
+		userNames.Add("Russian");
+		userNames.Add("Samurai");
+		userNames.Add("TheKing");
+		userNames.Add("Wrestler");
+
 
 		StartGame();
 	}
