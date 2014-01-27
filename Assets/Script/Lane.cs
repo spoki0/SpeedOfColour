@@ -82,7 +82,7 @@ public class Lane : MonoBehaviour {
 	}
 	
 	IEnumerator SpawnObject(){
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(7);
 		randomSpawn = Random.Range(0,3);
 		
 		if(randomSpawn != 2){
